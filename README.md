@@ -1,6 +1,18 @@
 # Hjem+ — Home Assistant theme
 
-🇩🇰 [Dansk](#dansk) · 🇬🇧 [English](#english)
+🇩🇰 [Dansk](#dansk) · 🇬🇧 [English](#english) · 🖼️ [Skærmbilleder / Screenshots](#skærmbilleder--screenshots)
+
+Skovgrøn top og sidebar, cremefarvet baggrund, hvide kort og limegrønne accenter — i lys og mørk udgave, til **Home Assistant** og til **[TMOG](https://tmog.org/skins.html)**.
+
+Forest-green header and sidebar, cream background, white cards and lime accents — light and dark, for **Home Assistant** and **[TMOG](https://tmog.org/skins.html)**.
+
+![Hjem+ i Home Assistant (lys)](screenshots/ha-light.png)
+
+| Indhold / Contents | Fil / File |
+|---|---|
+| Home Assistant-tema (lys + mørk) | [`themes/hjemplus.yaml`](themes/hjemplus.yaml) |
+| TMOG-skin, lys | [`tmog/hjemplus.tmogskin`](tmog/hjemplus.tmogskin) |
+| TMOG-skin, mørk | [`tmog/hjemplus-nat.tmogskin`](tmog/hjemplus-nat.tmogskin) |
 
 ---
 
@@ -99,6 +111,26 @@ Samme Hjem+-stil til [TMOG](https://tmog.org/skins.html)-popoutvinduet · The sa
 **DA:** Kopiér filerne til TMOG's skins-mappe (macOS: `~/Library/Application Support/TMOG/Skins/`, eller **View ▸ Popout Skin ▸ Open Skins Folder**). Vælg derefter **Reload Skins**, og vælg skinnet i listen.
 
 **EN:** Copy the files into TMOG's skins folder (macOS: `~/Library/Application Support/TMOG/Skins/`, or **View ▸ Popout Skin ▸ Open Skins Folder**). Then choose **Reload Skins** and pick the skin in the list.
+
+---
+
+## Skærmbilleder / Screenshots
+
+> Previews renderet med temaets farver · Previews rendered with the theme's colours.
+
+### Home Assistant
+
+| Lys / Light | Mørk / Dark |
+|---|---|
+| ![HA lys](screenshots/ha-light.png) | ![HA mørk](screenshots/ha-dark.png) |
+
+### TMOG
+
+| Hjem+ | Hjem+ Nat |
+|---|---|
+| ![TMOG Hjem+](screenshots/tmog-light.png) | ![TMOG Hjem+ Nat](screenshots/tmog-dark.png) |
+
+---
 
 ## License
 

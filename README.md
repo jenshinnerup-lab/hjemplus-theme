@@ -87,6 +87,19 @@ Use the automation in the Danish section above (`frontend.set_theme` with `name:
 
 The theme exposes the `--hjem-*` CSS variables listed in the table above for use in your own cards.
 
+---
+
+## TMOG-skins / TMOG skins
+
+Samme Hjem+-stil til [TMOG](https://tmog.org/skins.html)-popoutvinduet · The same Hjem+ look for the TMOG popout:
+
+- `tmog/hjemplus.tmogskin` — **Hjem+** (lys / light)
+- `tmog/hjemplus-nat.tmogskin` — **Hjem+ Nat** (mørk / dark)
+
+**DA:** Kopiér filerne til TMOG's skins-mappe (macOS: `~/Library/Application Support/TMOG/Skins/`, eller **View ▸ Popout Skin ▸ Open Skins Folder**). Vælg derefter **Reload Skins**, og vælg skinnet i listen.
+
+**EN:** Copy the files into TMOG's skins folder (macOS: `~/Library/Application Support/TMOG/Skins/`, or **View ▸ Popout Skin ▸ Open Skins Folder**). Then choose **Reload Skins** and pick the skin in the list.
+
 ## License
 
 MIT

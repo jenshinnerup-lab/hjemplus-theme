@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "id": "dev.vibrantcolor.hjemplus-nat",
+  "name": "Hjem+ Nat",
+  "author": "Jens H. Hinnerup · VibrantColor.dev",
+  "description": "Mørk udgave af Hjem+: dyb skovgrøn med limegrønne accenter.",
+  "symbol": "house.fill",
+
+  "metrics": {
+    "cornerRadius": 16,
+    "borderWidth": 1,
+    "padding": 12,
+    "headerBottomPadding": 10,
+    "headerGap": 8,
+    "sectionSpacing": 10,
+    "tileCornerRadius": 12,
+    "tileStrokeWidth": 1,
+    "badgeCornerRadius": 8
+  },
+
+  "header": { "title": "Hjem+" },
+
+  "surfaces": {
+    "window": { "gradient": ["#12211A", "#0E1813"] },
+    "windowStroke": "#24382D",
+    "header": { "gradient": ["#163A2B", "#0F2A1F"] },
+    "headerRule": "#C6D94E",
+    "tile": "#16241D",
+    "tileStroke": "#24382D",
+    "badgeStroke": "#E5843A"
+  },
+
+  "typography": {
+    "title":    { "size": 15, "weight": "semibold" },
+    "heading":  { "size": 12, "weight": "semibold" },
+    "label":    { "size": 10, "weight": "medium" },
+    "value":    { "size": 20, "weight": "bold" },
+    "row":      { "size": 11, "weight": "regular" },
+    "rowValue": { "size": 11, "weight": "semibold", "design": "monospaced" },
+    "auxLine":  { "size": 9,  "weight": "regular" },
+    "titleTracking": 0.3
+  },
+
+  "ink": {
+    "title": "#EEF3EF",
+    "primary": "#E8ECE9",
+    "secondary": "#9AA7A0",
+    "control": "#C6D94E",
+    "badge": "#E5843A",
+    "grip": "#5D6B63",
+    "rule": "#22342A"
+  },
+
+  "meters": {
+    "style": "bars",
+    "segments": 24,
+    "ground": "#132019",
+    "channels": {
+      "cpu":     { "accent": "#2FA978", "lit": "#2FA978", "unlit": "#1D3329" },
+      "memory":  { "accent": "#4A9BE0", "lit": "#4A9BE0", "unlit": "#1C2C38" },
+      "gpu":     { "accent": "#E8B53A", "lit": "#E8B53A", "unlit": "#30301F" },
+      "thermal": { "accent": "#E05570", "lit": "#E05570", "unlit": "#352029" },
+      "disk":    { "accent": "#C6D94E", "lit": "#C6D94E", "unlit": "#2A3324" },
+      "network": { "accent": "#4A9BE0", "lit": "#4A9BE0", "unlit": "#1C2C38" },
+      "power":   { "accent": "#E8B53A", "lit": "#E8B53A", "unlit": "#30301F" },
+      "alert":   { "accent": "#E5843A", "lit": "#E5843A", "unlit": "#38281D" }
+    }
+  },
+
+  "glow": {
+    "text": { "color": "#C6D94E33", "radius": 2 }
+  },
+
+  "quadrants": ["cpu", "memory", "gpu", "thermal"]
+}

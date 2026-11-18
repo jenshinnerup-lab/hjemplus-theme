@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "id": "dev.vibrantcolor.hjemplus",
+  "name": "Hjem+",
+  "author": "Jens H. Hinnerup · VibrantColor.dev",
+  "description": "Skovgrøn top, cremefarvet baggrund, hvide kort og limegrønne accenter — fra Hjem+-dashboardet i Home Assistant.",
+  "symbol": "house.fill",
+
+  "metrics": {
+    "cornerRadius": 16,
+    "borderWidth": 1,
+    "padding": 12,
+    "headerBottomPadding": 10,
+    "headerGap": 8,
+    "sectionSpacing": 10,
+    "tileCornerRadius": 12,
+    "tileStrokeWidth": 1,
+    "badgeCornerRadius": 8
+  },
+
+  "header": { "title": "Hjem+" },
+
+  "surfaces": {
+    "window": "#F3F2ED",
+    "windowStroke": "#D9D6CB",
+    "header": { "gradient": ["#1F4A37", "#1A4231"] },
+    "headerRule": "#C6D94E",
+    "tile": "#FFFFFF",
+    "tileStroke": "#E4E2D9",
+    "badgeStroke": "#E5843A"
+  },
+
+  "typography": {
+    "title":    { "size": 15, "weight": "semibold" },
+    "heading":  { "size": 12, "weight": "semibold" },
+    "label":    { "size": 10, "weight": "medium" },
+    "value":    { "size": 20, "weight": "bold" },
+    "row":      { "size": 11, "weight": "regular" },
+    "rowValue": { "size": 11, "weight": "semibold", "design": "monospaced" },
+    "auxLine":  { "size": 9,  "weight": "regular" },
+    "titleTracking": 0.3
+  },
+
+  "ink": {
+    "title": "#FFFFFF",
+    "primary": "#1C2621",
+    "secondary": "#66706A",
+    "control": "#18805C",
+    "badge": "#E5843A",
+    "grip": "#A7AEA9",
+    "rule": "#E8E6DE"
+  },
+
+  "meters": {
+    "style": "bars",
+    "segments": 24,
+    "ground": "#ECEAE3",
+    "channels": {
+      "cpu":     { "accent": "#18805C", "lit": "#18805C", "unlit": "#DCEBE3" },
+      "memory":  { "accent": "#2F80C9", "lit": "#2F80C9", "unlit": "#DCE8F3" },
+      "gpu":     { "accent": "#E8B53A", "lit": "#E8B53A", "unlit": "#F5ECD6" },
+      "thermal": { "accent": "#D63A5A", "lit": "#D63A5A", "unlit": "#F3DCE1" },
+      "disk":    { "accent": "#8FB33A", "lit": "#A9C443", "unlit": "#EBF0D8" },
+      "network": { "accent": "#2F80C9", "lit": "#2F80C9", "unlit": "#DCE8F3" },
+      "power":   { "accent": "#E8B53A", "lit": "#E8B53A", "unlit": "#F5ECD6" },
+      "alert":   { "accent": "#E5843A", "lit": "#E5843A", "unlit": "#F6E3D3" }
+    }
+  },
+
+  "quadrants": ["cpu", "memory", "gpu", "thermal"]
+}

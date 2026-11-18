@@ -1,0 +1,200 @@
+# ------------------------------------------------------------------
+#  Hjem+ — Home Assistant-tema
+#  Inspireret af Hjem+-dashboardet: skovgrøn top, cremefarvet baggrund,
+#  hvide kort med bløde hjørner og limegrønne "billig"-accenter.
+#
+#  Placering:  /config/themes/hjemplus.yaml
+#  Kræver i configuration.yaml:
+#    frontend:
+#      themes: !include_dir_merge_named themes
+# ------------------------------------------------------------------
+Hjem+:
+  # ---------- Fælles (begge tilstande) ----------
+  # Typografi
+  primary-font-family: "Inter, 'Segoe UI', Roboto, system-ui, sans-serif"
+  paper-font-common-base_-_font-family: "var(--primary-font-family)"
+  paper-font-common-code_-_font-family: "'JetBrains Mono', Consolas, monospace"
+  ha-font-family-body: "var(--primary-font-family)"
+  ha-font-family-heading: "var(--primary-font-family)"
+
+  # Brandfarver (bruges også i egne kort via var(--hjem-…))
+  hjem-forest: "#1a4231"
+  hjem-forest-deep: "#12291f"
+  hjem-green: "#18805c"
+  hjem-lime: "#c6d94e"
+  hjem-orange: "#e5843a"
+  hjem-red: "#d63a5a"
+  hjem-blue: "#2f80c9"
+  hjem-amber: "#e8b53a"
+
+  # Kort
+  ha-card-border-radius: "14px"
+  ha-card-border-width: "1px"
+  ha-dialog-border-radius: "18px"
+  mdc-shape-medium: "12px"
+
+  # Primær / accent
+  primary-color: "var(--hjem-green)"
+  dark-primary-color: "#11603f"
+  light-primary-color: "#d6efe3"
+  accent-color: "var(--hjem-lime)"
+
+  # Status
+  success-color: "var(--hjem-green)"
+  warning-color: "var(--hjem-orange)"
+  error-color: "var(--hjem-red)"
+  info-color: "var(--hjem-blue)"
+
+  # Kontakter og skydere
+  switch-checked-color: "var(--hjem-green)"
+  switch-checked-button-color: "#ffffff"
+  switch-checked-track-color: "var(--hjem-green)"
+  slider-color: "var(--hjem-green)"
+  slider-bar-color: "var(--hjem-lime)"
+
+  # Energi-dashboardet (sol = gul, net = blå, salg = grøn, batteri = lime)
+  energy-solar-color: "var(--hjem-amber)"
+  energy-grid-consumption-color: "var(--hjem-blue)"
+  energy-grid-return-color: "var(--hjem-green)"
+  energy-battery-in-color: "var(--hjem-lime)"
+  energy-battery-out-color: "#8fb33a"
+  energy-non-fossil-color: "#4caf7a"
+
+  # Grafer
+  graph-color-1: "var(--hjem-blue)"
+  graph-color-2: "var(--hjem-green)"
+  graph-color-3: "var(--hjem-red)"
+  graph-color-4: "var(--hjem-amber)"
+  graph-color-5: "var(--hjem-lime)"
+  graph-color-6: "var(--hjem-orange)"
+
+  modes:
+    # ================= LYS =================
+    light:
+      # Top / app-header
+      app-header-background-color: "var(--hjem-forest)"
+      app-header-text-color: "#ffffff"
+      app-header-selection-bar-color: "var(--hjem-lime)"
+      app-header-edit-background-color: "#2b5a46"
+
+      # Baggrunde
+      primary-background-color: "#f3f2ed"
+      secondary-background-color: "#eceae3"
+      lovelace-background: "#f3f2ed"
+      card-background-color: "#ffffff"
+      ha-card-background: "#ffffff"
+      ha-card-border-color: "#e4e2d9"
+      ha-card-box-shadow: "0 1px 2px rgba(20, 40, 30, 0.04)"
+      divider-color: "#e8e6de"
+      table-row-background-color: "#ffffff"
+      table-row-alternative-background-color: "#f8f7f3"
+      input-fill-color: "#f6f5f0"
+      mdc-text-field-fill-color: "#f6f5f0"
+      code-editor-background-color: "#faf9f5"
+      markdown-code-background-color: "#eef0ea"
+
+      # Tekst
+      primary-text-color: "#1c2621"
+      secondary-text-color: "#66706a"
+      disabled-text-color: "#a7aea9"
+      text-primary-color: "#ffffff"
+
+      # Ikoner
+      state-icon-color: "#3f5a4c"
+      state-icon-active-color: "var(--hjem-green)"
+      paper-item-icon-color: "#3f5a4c"
+      paper-item-icon-active-color: "var(--hjem-green)"
+      state-on-color: "var(--hjem-green)"
+      state-active-color: "var(--hjem-green)"
+
+      # Sidebar — mørk skovgrøn
+      sidebar-background-color: "var(--hjem-forest-deep)"
+      sidebar-text-color: "#d9e3dd"
+      sidebar-icon-color: "#9fb8aa"
+      sidebar-selected-background-color: "rgba(198, 217, 78, 0.14)"
+      sidebar-selected-text-color: "#ffffff"
+      sidebar-selected-icon-color: "var(--hjem-lime)"
+      sidebar-menu-button-background-color: "var(--hjem-forest-deep)"
+      sidebar-menu-button-text-color: "#ffffff"
+      sidebar-border-color: "rgba(255, 255, 255, 0.06)"
+
+      # Badges / chips
+      label-badge-red: "var(--hjem-red)"
+      label-badge-blue: "var(--hjem-blue)"
+      label-badge-green: "var(--hjem-green)"
+      label-badge-yellow: "var(--hjem-amber)"
+      label-badge-background-color: "#ffffff"
+      label-badge-text-color: "#1c2621"
+      badge-color: "var(--hjem-orange)"
+
+      # Dialoger
+      mdc-theme-surface: "#ffffff"
+      dialog-backdrop-filter: "blur(3px)"
+
+    # ================= MØRK =================
+    dark:
+      # Top / app-header
+      app-header-background-color: "#0f2a1f"
+      app-header-text-color: "#eef3ef"
+      app-header-selection-bar-color: "var(--hjem-lime)"
+      app-header-edit-background-color: "#1d3d2f"
+
+      # Baggrunde
+      primary-background-color: "#0e1813"
+      secondary-background-color: "#132019"
+      lovelace-background: "#0e1813"
+      card-background-color: "#16241d"
+      ha-card-background: "#16241d"
+      ha-card-border-color: "#24382d"
+      ha-card-box-shadow: "none"
+      divider-color: "#22342a"
+      table-row-background-color: "#16241d"
+      table-row-alternative-background-color: "#1a2a22"
+      input-fill-color: "#1b2c23"
+      mdc-text-field-fill-color: "#1b2c23"
+      code-editor-background-color: "#121e18"
+      markdown-code-background-color: "#1b2c23"
+
+      # Tekst
+      primary-text-color: "#e8ece9"
+      secondary-text-color: "#9aa7a0"
+      disabled-text-color: "#5d6b63"
+      text-primary-color: "#ffffff"
+
+      # Primær lidt lysere i mørk tilstand for kontrast
+      primary-color: "#2fa978"
+      light-primary-color: "#1f4a37"
+
+      # Ikoner
+      state-icon-color: "#a9bdb2"
+      state-icon-active-color: "var(--hjem-lime)"
+      paper-item-icon-color: "#a9bdb2"
+      paper-item-icon-active-color: "var(--hjem-lime)"
+      state-on-color: "var(--hjem-lime)"
+      state-active-color: "var(--hjem-lime)"
+
+      # Sidebar
+      sidebar-background-color: "#0a1510"
+      sidebar-text-color: "#cfdad3"
+      sidebar-icon-color: "#8ea69a"
+      sidebar-selected-background-color: "rgba(198, 217, 78, 0.12)"
+      sidebar-selected-text-color: "#ffffff"
+      sidebar-selected-icon-color: "var(--hjem-lime)"
+      sidebar-menu-button-background-color: "#0a1510"
+      sidebar-menu-button-text-color: "#ffffff"
+      sidebar-border-color: "rgba(255, 255, 255, 0.05)"
+
+      # Kontakter
+      switch-checked-color: "#2fa978"
+      switch-checked-track-color: "#2fa978"
+      switch-unchecked-button-color: "#9aa7a0"
+      switch-unchecked-track-color: "#3a4a41"
+
+      # Badges / chips
+      label-badge-background-color: "#16241d"
+      label-badge-text-color: "#e8ece9"
+      badge-color: "var(--hjem-orange)"
+
+      # Dialoger
+      mdc-theme-surface: "#16241d"
+      dialog-backdrop-filter: "blur(3px)"

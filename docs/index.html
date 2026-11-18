@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hjem+ til TMOG</title>
+<meta name="description" content="Hjem+ og Hjem+ Nat — skins til TMOG-popoutvinduet i samme stil som Hjem+-dashboardet i Home Assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1a4231; --forest-deep:#12291f; --green:#18805c; --lime:#c6d94e;
+    --bg:#f3f2ed; --card:#fff; --border:#e4e2d9; --rule:#e8e6de;
+    --ink:#1c2621; --ink-2:#3d4842; --sec:#66706a;
+    --mono:'JetBrains Mono',Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,'Segoe UI',Roboto,system-ui,sans-serif}
+  a{color:#11603f} a:hover{color:#0b4a30}
+  code{font-family:var(--mono)}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;min-height:44px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none}
+  .btn-lime{background:var(--lime);color:var(--forest-deep)} .btn-lime:hover{color:var(--forest-deep);filter:brightness(1.05)}
+  .btn-green{background:var(--green);color:#fff} .btn-green:hover{color:#fff;filter:brightness(1.08)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid #d9d6cb} .btn-ghost:hover{color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+  .pill{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .muted{color:var(--sec)}
+
+  header{background:var(--forest);color:#fff}
+  nav{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+  .brand{color:#fff;text-decoration:none;font-size:19px;font-weight:700;display:flex;align-items:center;gap:10px;padding:14px 0}
+  .brand:hover{color:#fff}
+  .tabs{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px;flex:1 1 auto}
+  .tabs a{color:#dbe6df;text-decoration:none;padding:18px 0 15px;border-bottom:3px solid transparent}
+  .tabs a.on,.tabs a:hover{color:#fff} .tabs a.on{border-bottom-color:var(--lime)}
+
+  main.wrap{padding-top:36px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+  .hero{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+  .hero h1{margin:0;font-size:clamp(30px,5vw,44px);line-height:1.1;font-weight:700;letter-spacing:-.5px}
+  .hero p.lead{margin:14px 0 0;font-size:18px;line-height:1.55;color:var(--ink-2);max-width:620px}
+
+  .panel{background:var(--forest);color:#fff;border-radius:18px;padding:24px 28px}
+  .palette{display:flex;gap:18px;margin-top:22px;overflow-x:auto;padding-bottom:6px}
+  .sw{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:64px}
+  .dot{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55)}
+  .dot.accent{border:3px solid var(--lime);box-shadow:0 0 0 3px rgba(198,217,78,.25)}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+  .kpi{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+  .kpi .v{font-size:30px;font-weight:700;margin-top:4px}
+  .kpi .v span{font-size:15px;font-weight:500;color:var(--sec)}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+  .skin{display:flex;flex-direction:column;gap:16px;padding:20px}
+  .stage{border-radius:14px;padding:28px 16px;display:flex;justify-content:center}
+  .win{width:289px;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+  .whead{display:flex;align-items:center;gap:8px;padding:10px 12px;color:#fff;font-size:15px;font-weight:600;letter-spacing:.3px;border-bottom:2px solid #c6d94e}
+  .whead i{width:14px;height:14px;border-radius:3px;background:#c6d94e;display:inline-block}
+  .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px 12px 6px}
+  .tile{border-radius:12px;padding:8px 9px}
+  .tile .l{font-size:10px;font-weight:500} .tile .v{font-size:20px;font-weight:700} .tile .v span{font-size:11px;font-weight:500}
+  .segs{display:flex;gap:2px;margin-top:4px} .segs i{flex:1;height:7px;border-radius:2px;display:block}
+  .rows{padding:2px 14px}
+  .row{display:flex;justify-content:space-between;font-size:11px;padding:4px 0}
+  .row b{font-family:var(--mono);font-weight:600}
+
+  ol.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+  ol.steps li{display:flex;gap:14px;align-items:flex-start;font-size:14px;line-height:1.5}
+  .num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .chip{font-family:var(--mono);font-size:12px;background:var(--bg);padding:2px 6px;border-radius:6px}
+  .kv{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:14px}
+
+  .chan{display:grid;grid-template-columns:120px 90px minmax(160px,1fr) 90px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #efede6;font-size:14px;min-width:520px}
+  .chan code{font-size:12px;color:var(--sec)}
+  .track{height:10px;border-radius:5px;background:#eceae3} .track div{height:10px;border-radius:5px}
+
+  footer{border-top:1px solid var(--border)}
+  footer .wrap{padding-top:20px;padding-bottom:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:var(--sec)}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Hovedmenu">
+    <a class="brand" href="#top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c6d94e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      Hjem+
+    </a>
+    <div class="tabs">
+      <a class="on" href="#top">Overblik</a>
+      <a href="#skins">Skins</a>
+      <a href="#installation">Installation</a>
+      <a href="#farver">Farver</a>
+    </div>
+    <a class="btn btn-lime" style="font-size:14px;padding:12px 18px" href="https://github.com/jenshinnerup-lab/hjemplus-theme">Hent på GitHub</a>
+  </nav>
+</header>
+
+<main id="top" class="wrap">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div style="flex:1 1 520px;min-width:0">
+      <p class="muted" style="margin:0 0 6px;font-size:13px">VibrantColor.dev</p>
+      <h1 id="hero-title">Hjem+ observatorium — nu i TMOG</h1>
+      <p class="lead">To skins til TMOG-popoutvinduet i samme stil som Hjem+-dashboardet i Home Assistant: skovgrøn top, cremefarvet baggrund, hvide kort og limegrønne accenter.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <a class="btn btn-green" href="#installation">Installér</a>
+      <a class="btn btn-ghost" href="#skins">Se skins</a>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="palet-title">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:baseline">
+      <div>
+        <h2 id="palet-title" style="margin:0;font-size:20px;font-weight:600">Dagens palet</h2>
+        <p style="margin:4px 0 0;font-size:13px;color:#c9d8cf">Målerkanalerne i TMOG, farvet som Hjem+. Limegrøn markerer accenten.</p>
+      </div>
+    </div>
+    <div class="palette" id="palette"></div>
+  </section>
+
+  <section class="kpis" aria-label="Nøgletal">
+    <div class="kpi"><div class="muted" style="font-size:13px">Skins</div><div class="v">2</div><div class="muted" style="font-size:12px">Hjem+ og Hjem+ Nat</div></div>
+    <div class="kpi"><div class="muted" style="font-size:13px">Format</div><div class="v">JSON <span>v1</span></div><div class="muted" style="font-size:12px">.tmogskin, kun farver</div></div>
+    <div class="kpi"><div class="muted" style="font-size:13px">Popout</div><div class="v">289×301 <span>pt</span></div><div class="muted" style="font-size:12px">TMOG's faste layout</div></div>
+    <div class="kpi"><div class="muted" style="font-size:13px">Licens</div><div class="v">MIT</div><div class="muted" style="font-size:12px">Fri at bruge og ændre</div></div>
+  </section>
+
+  <section id="skins" aria-labelledby="skins-title" style="display:flex;flex-direction:column;gap:14px">
+    <h2 id="skins-title" style="margin:0;font-size:22px;font-weight:600">Områder</h2>
+    <div class="grid2" id="skin-cards"></div>
+    <p class="muted" style="margin:0;font-size:12px">Popout-billederne er tegnet med skinnenes farver som eksempel. Tallene er illustrationer, ikke målinger.</p>
+  </section>
+
+  <section class="grid2" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+    <div id="installation" class="card">
+      <h2 style="margin:0 0 4px;font-size:18px;font-weight:600">Installation</h2>
+      <p class="muted" style="margin:0 0 16px;font-size:13px">Tre trin. Ingen build, ingen kode.</p>
+      <ol class="steps">
+        <li><span class="num">1</span><div><b>Hent skinnet</b> fra GitHub: <code class="chip">hjemplus.tmogskin</code> eller <code class="chip">hjemplus-nat.tmogskin</code>.</div></li>
+        <li><span class="num">2</span><div><b>Åbn skins-mappen</b> i TMOG: <i>View ▸ Popout Skin ▸ Open Skins Folder</i> — eller <i>Settings ▸ Interface ▸ Skins Folder</i>. Læg filen dér.</div></li>
+        <li><span class="num">3</span><div><b>Reload Skins</b> og vælg <b>Hjem+</b> eller <b>Hjem+ Nat</b> i listen.</div></li>
+      </ol>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;gap:12px">
+      <h2 style="margin:0;font-size:18px;font-weight:600">Skins-mappen</h2>
+      <div class="kv"><span>macOS</span><code style="font-size:12px;text-align:right">~/Library/Application Support/TMOG/Skins/</code></div>
+      <div class="kv"><span>Windows</span><span class="muted" style="font-size:13px;text-align:right">Ikke dokumenteret</span></div>
+      <div class="kv"><span>Linux</span><span class="muted" style="font-size:13px;text-align:right">Ikke dokumenteret</span></div>
+      <p class="muted" style="margin:4px 0 0;font-size:13px;line-height:1.5">TMOG dokumenterer indtil videre kun skins på macOS. På Linux har skin-menuen ikke kunnet findes i version 1.1.1. Indlæses et skin ikke, står årsagen under <i>Settings ▸ Interface</i>.</p>
+    </div>
+  </section>
+
+  <section id="farver" class="card" aria-labelledby="farver-title">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:10px">
+      <h2 id="farver-title" style="margin:0;font-size:18px;font-weight:600">Kanalfarver</h2>
+      <span class="pill" style="background:#e3f0e9;color:#11603f">lys · mørk</span>
+    </div>
+    <div style="overflow-x:auto" id="channels"></div>
+  </section>
+
+  <section class="panel" style="padding:28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px">
+    <div style="flex:1 1 420px;min-width:0">
+      <h2 style="margin:0;font-size:22px;font-weight:600">Samme look i Home Assistant</h2>
+      <p style="margin:6px 0 0;font-size:15px;line-height:1.55;color:#dbe6df">Repoet indeholder også Hjem+-temaet til Home Assistant med lys og mørk tilstand. Det kan installeres via HACS.</p>
+    </div>
+    <a class="btn btn-lime" href="https://github.com/jenshinnerup-lab/hjemplus-theme">jenshinnerup-lab/hjemplus-theme</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Hjem+ · VibrantColor.dev · MIT</span>
+    <span>Skins til <a href="https://tmog.org/skins.html">TMOG</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var repo = 'https://github.com/jenshinnerup-lab/hjemplus-theme/blob/main/tmog/';
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+
+  // Palet
+  var pal = [['Skov','#1A4231'],['Grøn','#18805C'],['Lime','#C6D94E',1],['CPU','#18805C'],['Hukomm.','#2F80C9'],
+             ['GPU','#E8B53A'],['Temp.','#D63A5A'],['Alarm','#E5843A'],['Creme','#F3F2ED']];
+  document.getElementById('palette').innerHTML = pal.map(function (p) {
+    return '<div class="sw"><div class="dot' + (p[2] ? ' accent' : '') + '" style="background:' + p[1] + '" aria-hidden="true"></div>' +
+      '<div style="font-size:13px;font-weight:600">' + esc(p[0]) + '</div>' +
+      '<div style="font-size:11px;color:#c9d8cf;font-family:var(--mono)">' + p[1] + '</div></div>';
+  }).join('');
+
+  // Skins
+  function segs(lit, unlit, v) {
+    var k = Math.round(v * 12), s = '';
+    for (var i = 0; i < 12; i++) s += '<i style="background:' + (i < k ? lit : unlit) + '"></i>';
+    return s;
+  }
+  function skin(L) {
+    var ink = L ? '#1C2621' : '#E8ECE9', sec = L ? '#66706A' : '#9AA7A0';
+    var tileBg = L ? '#FFFFFF' : '#16241D', tileBd = L ? '#E4E2D9' : '#24382D', rule = L ? '#E8E6DE' : '#22342A';
+    var ch = L
+      ? [['CPU','#18805C','#DCEBE3',.42],['Hukommelse','#2F80C9','#DCE8F3',.67],['GPU','#E8B53A','#F5ECD6',.21],['Temperatur','#D63A5A','#F3DCE1',.55]]
+      : [['CPU','#2FA978','#1D3329',.42],['Hukommelse','#4A9BE0','#1C2C38',.67],['GPU','#E8B53A','#30301F',.21],['Temperatur','#E05570','#352029',.55]];
+    var name = L ? 'Hjem+' : 'Hjem+ Nat', file = L ? 'hjemplus.tmogskin' : 'hjemplus-nat.tmogskin';
+    var desc = L
+      ? 'Cremefarvet vindue, hvide kort og skovgrøn titellinje med limegrøn streg. Til lyse skriveborde og dagslys.'
+      : 'Dyb skovgrøn med limegrønne accenter og en svag glød på teksten. Til mørk tilstand og aftentimer.';
+    var tiles = ch.map(function (c) {
+      return '<div class="tile" style="background:' + tileBg + ';border:1px solid ' + tileBd + '">' +
+        '<div class="l" style="color:' + sec + '">' + c[0] + '</div>' +
+        '<div class="v" style="color:' + ink + '">' + Math.round(c[3] * 100) + '<span style="color:' + sec + '">%</span></div>' +
+        '<div class="segs">' + segs(c[1], c[2], c[3]) + '</div></div>';
+    }).join('');
+    var rows = [['Disk','312 GB fri'],['Netværk','↓ 4,2 MB/s'],['Strøm','18 W']].map(function (r) {
+      return '<div class="row" style="color:' + sec + ';border-bottom:1px solid ' + rule + '"><span>' + r[0] + '</span><b style="color:' + ink + '">' + r[1] + '</b></div>';
+    }).join('');
+    return '<article class="card skin">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px">' +
+        '<h3 style="margin:0;font-size:17px;font-weight:600">' + name + '</h3>' +
+        '<span class="pill" style="background:#eef3d2;color:#3f4a12">' + (L ? 'Lys' : 'Mørk') + '</span></div>' +
+      '<div class="stage" style="background:' + (L ? '#dfe3dc' : '#2a302c') + '">' +
+        '<div class="win" style="border:1px solid ' + (L ? '#D9D6CB' : '#24382D') + ';background:' + (L ? '#F3F2ED' : 'linear-gradient(#12211A,#0E1813)') + '">' +
+          '<div class="whead" style="background:' + (L ? 'linear-gradient(#1F4A37,#1A4231)' : 'linear-gradient(#163A2B,#0F2A1F)') + '"><i></i>' + name + '</div>' +
+          '<div class="tiles">' + tiles + '</div><div class="rows">' + rows + '</div>' +
+        '</div></div>' +
+      '<p style="margin:0;font-size:14px;line-height:1.5;color:var(--ink-2)">' + desc + '</p>' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--rule);padding-top:12px">' +
+        '<code style="font-size:12px;color:var(--sec)">tmog/' + file + '</code>' +
+        '<a href="' + repo + file + '" style="font-size:14px;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center">Hent fil →</a></div>' +
+      '</article>';
+  }
+  document.getElementById('skin-cards').innerHTML = skin(true) + skin(false);
+
+  // Kanaler
+  var chans = [['CPU','#18805C','#2FA978',42],['Hukommelse','#2F80C9','#4A9BE0',67],['GPU','#E8B53A','#E8B53A',21],
+               ['Temperatur','#D63A5A','#E05570',55],['Disk','#A9C443','#C6D94E',38],['Netværk','#2F80C9','#4A9BE0',50],
+               ['Strøm','#E8B53A','#E8B53A',30],['Alarm','#E5843A','#E5843A',18]];
+  document.getElementById('channels').innerHTML = chans.map(function (c) {
+    return '<div class="chan"><span style="font-weight:500">' + c[0] + '</span><code>' + c[1] + '</code>' +
+      '<div class="track"><div style="width:' + c[3] + '%;background:linear-gradient(90deg,' + c[1] + ',' + c[2] + ')"></div></div>' +
+      '<code>' + c[2] + '</code></div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

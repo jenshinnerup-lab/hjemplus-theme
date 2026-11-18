@@ -13,6 +13,7 @@ Forest-green header and sidebar, cream background, white cards and lime accents 
 | Home Assistant-tema (lys + mørk) | [`themes/hjemplus.yaml`](themes/hjemplus.yaml) |
 | TMOG-skin, lys | [`tmog/hjemplus.tmogskin`](tmog/hjemplus.tmogskin) |
 | TMOG-skin, mørk | [`tmog/hjemplus-nat.tmogskin`](tmog/hjemplus-nat.tmogskin) |
+| Onepage for TMOG-skins | [`docs/index.html`](docs/index.html) |
 
 ---
 
@@ -111,6 +112,16 @@ Samme Hjem+-stil til [TMOG](https://tmog.org/skins.html)-popoutvinduet · The sa
 **DA:** Kopiér filerne til TMOG's skins-mappe (macOS: `~/Library/Application Support/TMOG/Skins/`, eller **View ▸ Popout Skin ▸ Open Skins Folder**). Vælg derefter **Reload Skins**, og vælg skinnet i listen.
 
 **EN:** Copy the files into TMOG's skins folder (macOS: `~/Library/Application Support/TMOG/Skins/`, or **View ▸ Popout Skin ▸ Open Skins Folder**). Then choose **Reload Skins** and pick the skin in the list.
+
+> **Linux / Windows:** TMOG dokumenterer indtil videre kun skins på macOS. I TMOG 1.1.1 til Linux har skin-menuen ikke kunnet findes. · TMOG currently documents skins for macOS only; the skin menu could not be found in TMOG 1.1.1 for Linux.
+
+### Onepage
+
+`docs/index.html` er en selvstændig præsentationsside for skinnene i Hjem+ observatorium-stil. Den kan åbnes direkte i en browser eller udgives med GitHub Pages (Settings → Pages → *Deploy from a branch* → `main` / `/docs`).
+
+`docs/index.html` is a standalone showcase page for the skins in the Hjem+ observatory style. Open it in a browser or publish it with GitHub Pages (Settings → Pages → *Deploy from a branch* → `main` / `/docs`).
+
+![Onepage](screenshots/onepage.png)
 
 ---
 
